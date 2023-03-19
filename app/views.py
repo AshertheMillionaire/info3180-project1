@@ -25,6 +25,15 @@ def about():
     return render_template('about.html', name="Mary Jane")
 
 
+@app.route('/properties/create')
+def properties():
+    pass
+
+
+
+
+
+
 ###
 # The functions below should be applicable to all Flask apps.
 ###
