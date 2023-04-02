@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1 >Properties</h1>
+
+{% include 'flash_messages.html' %}
+
+<div class="column">
+    <div class="row">
+        {% for id , filename, title, location, type, Description, price, no_of_bedrooms, no_of_bathrooms in collect %}
+        <img src="{{url_for('get_image', filename=filename)}}" alt="{{filename}}">
+        <h2><b>{{title}}</b></h2>
+        <h3>{{location}}</h3>
+        <h4><button>{{price}}</button></h4>
+        <div>
+            <form action="/properties/id">
+                <button type="submit"> View Property</button>
+            </form>
+        </div>
+        {% endfor %}   
+
+    </div>
+    
+</div>
+
+{% endblock %}
